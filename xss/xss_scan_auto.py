@@ -17,8 +17,6 @@ def load_xss_test_strings(filename):
     content = [line.strip() for line in content]    # Removes Newline-Character
     return content
 
-
-
 ### function to dynamically extract the parameters:
 def extract_parameters_from_url(url):
     response = requests.get(url)
@@ -29,8 +27,6 @@ def extract_parameters_from_url(url):
 
     return parameters
 #####################################################
-
-
 
 def main():
     print("[+] Starting Scanner")
