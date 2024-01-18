@@ -32,8 +32,12 @@ def extract_parameters_from_url(url):
         response.raise_for_status()
         #parse response
         soup = BeautifulSoup(response.content, 'html.parser')
-        #find all name attributes and extract their value..
-        parameters = [param["name"] for param in soup.find_all('input', {'name': True})]
+        #find all name attributes in input and extract their value..
+        input_parameters = [param["name"] for param in soup.find_all('input', {'name': True})]
+        #find all name attributes in textarea and extract their value..
+        textarea_parameters = [param["name"] for param in soup.find_all('textarea', {'name': True})]
+
+        parameters = input_parameters + textarea_parameters
         #return list of parameters
         return parameters
     #error handling:

@@ -11,7 +11,13 @@ def extract_parameters_from_url(url):
         response = requests.get(url)
         response.raise_for_status()  # Check if the request was successful
         soup = BeautifulSoup(response.content, 'html.parser')
-        parameters = [param["name"] for param in soup.find_all('input', {'name': True})]
+
+        # Extract parameters from both input and textarea elements
+        input_parameters = [param["name"] for param in soup.find_all('input', {'name': True})]
+        textarea_parameters = [param["name"] for param in soup.find_all('textarea', {'name': True})]
+
+        parameters = input_parameters + textarea_parameters
+        
         return parameters
     except requests.RequestException as e:
         print(f"Error: {e}")
