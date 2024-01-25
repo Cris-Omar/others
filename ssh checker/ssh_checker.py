@@ -15,8 +15,10 @@ def main():
         for entry in journal:
           if 'sshd' in entry.get('SYSLOG_IDENTIFIER', ''):
             # write your code here
-            pass
+            if "Failed password for" in entry["MESSAGE"]:
             
+              print(entry)
+
       except KeyboardInterrupt:
         print("[+] Stopping SSH Brute Force Detector.")
         break

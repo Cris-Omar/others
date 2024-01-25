@@ -1,6 +1,22 @@
+// Dictionary example:
+
+{
+    "10.211.55.2" = {   "hits" = 0,
+                        "user" = "parallels",
+                        "timestamp" = datetime.datetime(2024, 1, 25, 21, 17, 50, 396680, tzinfo=datetime.timezone(datetime.timedelta(seconds=3600), 'CET'))
+                    },
+    "192.33.34.2" = {   "hits" = 0,
+                        "user" = "barbara",
+                        "timestamp" = datetime.datetime(2024, 1, 25, 21, 17, 50, 396680, tzinfo=datetime.timezone(datetime.timedelta(seconds=3600), 'CET'))
+                    }
+}
+
+
+/* first example:
 {
     "hits" = 0,
     "source_ip" = "10.10.10.10",
     "user" = "chicho",
 
 }
+*/
