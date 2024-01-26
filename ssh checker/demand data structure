@@ -20,3 +20,35 @@
 
 }
 */
+
+//Dictionary:
+{
+    'PRIORITY': 6,
+    '_SELINUX_CONTEXT': 'unconfined\n',
+    '_SYSTEMD_SLICE': 'system.slice',
+    '_BOOT_ID': UUID('7fee0828-2de5-4a15-a22f-0521fad6b9c8'),
+    '_MACHINE_ID': UUID('94ed1c67-82c3-4c5c-856c-4eb340aee00f'),
+    '_HOSTNAME': 'ubu01',
+    '_UID': 0,
+    '_GID': 0, 
+    '_CAP_EFFECTIVE': '1ffffffffff', 
+    '_TRANSPORT': 'syslog', 
+    'SYSLOG_IDENTIFIER': 'sshd', 
+    '_COMM': 'sshd', 
+    '_EXE': '/usr/sbin/sshd', 
+    '_CMDLINE': '"sshd: chicho [priv]" ""', 
+    '_SYSTEMD_CGROUP': '/system.slice/ssh.service', 
+    '_SYSTEMD_UNIT': 'ssh.service', 
+    '_SYSTEMD_INVOCATION_ID': '71866fca1eca47d58d196f347b17130a', 
+    'SYSLOG_FACILITY': 4, 
+    'SYSLOG_PID': 25151, 
+    '_PID': 25151, 
+    'SYSLOG_TIMESTAMP': 'Jan 26 20:15:08 ',
+    'MESSAGE': 'Failed password for chicho from 192.168.17.1 port 50914 ssh2',
+    '_SOURCE_REALTIME_TIMESTAMP': datetime.datetime(2024, 1, 26, 20, 15, 8, 354310),
+    '__REALTIME_TIMESTAMP': datetime.datetime(2024, 1, 26, 20, 15, 8, 354351),
+    '__MONOTONIC_TIMESTAMP': journal.Monotonic(timestamp=datetime.timedelta(seconds=1140, microseconds=710210),
+    bootid=UUID('7fee0828-2de5-4a15-a22f-0521fad6b9c8')),
+    '__CURSOR': 's=00960c16499042839e7e235b4137bc36;i=5122;b=7fee08282de54a15a22f0521fad6b9c8;m=43fddb42;t=60fde1d430f2f;x=ea0c194e8996efb8'
+}
+
