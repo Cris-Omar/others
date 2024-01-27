@@ -31,6 +31,8 @@ def main():
                 #"MONOTONIC_TIMESTAMP" Monotonic time starts at an arbitrary point. It cannot move backwards. Finally, and most importantly, it is completely independent of the system clock
                 timeStamp = entry['__MONOTONIC_TIMESTAMP']
 
+
+
                 #############################CHECK THIS:
                 if userName in failedAttempts:
                   # Update the timestamp and increment the count
@@ -50,6 +52,8 @@ def main():
                       # Add the user to the dictionary with initial values
                       failedAttempts[userName] = (timeStamp, 1)
                 ##################################
+                      
+
                       
       #exit programm when user clicks "CTRL+C"
       except KeyboardInterrupt:
