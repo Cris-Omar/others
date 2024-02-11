@@ -1,0 +1,42 @@
+SSH Brute-Force-Detector
+
+Wir möchten ein Tool schreiben welches den beigelegten SSH-Access-Log liest und fehlerhafte Login-Versuche auswertet.
+Wenn ein Host mehr als eine bestimmte Anzahl fehlerhafte Versuche eingetragen hat, soll er zusammen mit der Anzahl Fehlversuche ausgegeben werden.
+Die Anzahl fehlerhafter Versuche soll dem Programm als Parameter übergeben werden. Man sagt solch einem Wert auch Schwellwert oder Threshold
+Ein Beispiel wie das Programm aufgerufen werden kann:
+
+python3 xss_brute_force_detector.py 5
+
+Das Programm würde nun die IP's welche im Log-File mehr als 5 Fehlerhafte Login-Versuche haben zusammen mit dieser Zahl ausgeben.
+Bonus-Aufgabe:
+
+Erweitere das Tool, dass die Fehlversuche pro Tag gelten.
+Tipp:
+Du kannst eine Liste mit mehreren Einträgen mittels der set-Funktion auf eine Liste mit je einem einzigartigen Eintrag reduzieren.
+
+Ein Beispiel:
+liste_a =  ['a', 'b', 'z', 'a', 'a', 'a', 'g', 'a', 'g', 'a']
+einzigartige_elemente = set(liste_a)
+
+In der Variable einzigartige_elementesteht danach {'b', 'a', 'g', 'z'}. Diese Variable ist nun vom Datentyp set. Die Elemente können aber gleich wie beim Dictionary über einen For-In-Loop zugegriffen werden.
+Denial of Service Analyse im Terminal
+
+Schauen wir uns das access.log-File genauer an. Wir wissen, dass es darin Einträge zu einem Denial of Service-Angriff hat. Beantworte die folgenden Fragen indem du das File im Terminal untersuchst.
+
+    Wie viel mal wurde die Ressource total aufgerufen?
+
+    Wie viel mal wurde die Ressource im Schnitt pro Sekunde aufgerufen?
+    Wann wurde der erste und wann der letzte Request von der Angreifer-IP aufgezeichnet?
+    Wann wurde der erste DoS-Request aufgezeichnet?
+
+Nutze dazu die folgenden Tool uns Techniken:
+
+    Pipes
+    cat
+    grep
+    wc
+    cut
+______________________________examples:
+
+grep "10.34.148.59" access.log | grep -o "[0-9]{2}/[a-zA-Z]{3}/[0-9]{4}:[0-9]{2}:[0-9]{2}:[0-9]{2}" | sort | uniq -c | sort -nr | awk '{s+=$1} END {if(NR>0) print s/NR; else print 0}'
+
